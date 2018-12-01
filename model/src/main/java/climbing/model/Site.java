@@ -1,8 +1,7 @@
 package climbing.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
@@ -11,20 +10,25 @@ public class Site {
     @Id
     @GeneratedValue
     private Long id;
+    @NotNull
     private String name;
     private String description;
     private Date date;
     private String level;
-    private int altitude;
+    private double altitude;
     private String adresse;
+    @ManyToOne
+    @JoinColumn(name="id_topo")
+    private Topo topo;
 
-    public Site(String name, String description, Date date, String level, int altitude, String adresse) {
+    public Site(@NotNull String name, String description, Date date, String level, double altitude, String adresse, Topo topo) {
         this.name = name;
         this.description = description;
         this.date = date;
         this.level = level;
         this.altitude = altitude;
         this.adresse = adresse;
+        this.topo = topo;
     }
 
     public Site() {
@@ -70,11 +74,11 @@ public class Site {
         this.level = level;
     }
 
-    public int getAltitude() {
+    public double getAltitude() {
         return altitude;
     }
 
-    public void setAltitude(int altitude) {
+    public void setAltitude(double altitude) {
         this.altitude = altitude;
     }
 
@@ -84,5 +88,13 @@ public class Site {
 
     public void setAdresse(String adresse) {
         this.adresse = adresse;
+    }
+
+    public Topo getTopo() {
+        return topo;
+    }
+
+    public void setTopo(Topo topo) {
+        this.topo = topo;
     }
 }

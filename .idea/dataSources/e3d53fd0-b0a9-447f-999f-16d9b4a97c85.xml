@@ -70,8 +70,8 @@
     <schema id="15" parent="2" name="public">
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
-      <IntrospectionTimestamp>2018-08-16.17:27:41.495</IntrospectionTimestamp>
-      <IntrospectionStateNumber>890</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-12-01.22:45:33.115</IntrospectionTimestamp>
+      <IntrospectionStateNumber>2145</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -118,236 +118,422 @@
       <Type>index</Type>
     </access-method>
     <sequence id="22" parent="15" name="hibernate_sequence">
-      <ObjectId>49740</ObjectId>
-      <StateNumber>883</StateNumber>
+      <ObjectId>100409</ObjectId>
+      <StateNumber>2130</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>bigint</DataType>
     </sequence>
     <table id="23" parent="15" name="comment">
-      <ObjectId>49742</ObjectId>
-      <StateNumber>889</StateNumber>
+      <ObjectId>100411</ObjectId>
+      <StateNumber>2143</StateNumber>
     </table>
-    <table id="24" parent="15" name="route">
-      <ObjectId>49747</ObjectId>
-      <StateNumber>890</StateNumber>
+    <table id="24" parent="15" name="reservation">
+      <ObjectId>100416</ObjectId>
+      <StateNumber>2140</StateNumber>
     </table>
-    <table id="25" parent="15" name="site">
-      <ObjectId>49752</ObjectId>
-      <StateNumber>890</StateNumber>
+    <table id="25" parent="15" name="route">
+      <ObjectId>100421</ObjectId>
+      <StateNumber>2141</StateNumber>
     </table>
-    <table id="26" parent="15" name="users">
-      <ObjectId>49760</ObjectId>
-      <StateNumber>889</StateNumber>
+    <table id="26" parent="15" name="site">
+      <ObjectId>100426</ObjectId>
+      <StateNumber>2144</StateNumber>
     </table>
-    <column id="27" parent="23" name="id">
+    <table id="27" parent="15" name="site_comment">
+      <ObjectId>100434</ObjectId>
+      <StateNumber>2144</StateNumber>
+    </table>
+    <table id="28" parent="15" name="topo">
+      <ObjectId>100439</ObjectId>
+      <StateNumber>2145</StateNumber>
+    </table>
+    <table id="29" parent="15" name="users">
+      <ObjectId>100447</ObjectId>
+      <StateNumber>2145</StateNumber>
+    </table>
+    <column id="30" parent="23" name="id">
       <Position>1</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>884</StateNumber>
-      <TypeId>23</TypeId>
+      <StateNumber>2131</StateNumber>
+      <TypeId>20</TypeId>
     </column>
-    <column id="28" parent="23" name="content">
+    <column id="31" parent="23" name="content">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>884</StateNumber>
+      <NotNull>1</NotNull>
+      <StateNumber>2131</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="29" parent="23" name="date">
+    <column id="32" parent="23" name="date">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
-      <StateNumber>884</StateNumber>
+      <NotNull>1</NotNull>
+      <StateNumber>2131</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="30" parent="23" name="note">
+    <column id="33" parent="23" name="note">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>884</StateNumber>
+      <StateNumber>2131</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="31" parent="23" name="id_site">
+    <column id="34" parent="23" name="id_user">
       <Position>5</Position>
-      <DataType>integer|0s</DataType>
-      <StateNumber>884</StateNumber>
-      <TypeId>23</TypeId>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>2131</StateNumber>
+      <TypeId>20</TypeId>
     </column>
-    <column id="32" parent="23" name="id_user">
-      <Position>6</Position>
-      <DataType>integer|0s</DataType>
-      <StateNumber>884</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <index id="33" parent="23" name="comment_pkey">
-      <ObjectId>49745</ObjectId>
+    <index id="35" parent="23" name="comment_pkey">
+      <ObjectId>100414</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="34" parent="23" name="comment_pkey">
-      <ObjectId>49746</ObjectId>
+    <key id="36" parent="23" name="comment_pkey">
+      <ObjectId>100415</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>comment_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="35" parent="23" name="fk9stdr23x280wd2op9c0ga43b4">
-      <ObjectId>49768</ObjectId>
-      <ColNames>id_site</ColNames>
-      <RefTableId>49752</RefTableId>
-      <RefColPositions>1</RefColPositions>
-      <RefTableName>site</RefTableName>
-      <RefKeyName>site_pkey</RefKeyName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="36" parent="23" name="fkiuf9gwufew9y31h0rql66f9w9">
-      <ObjectId>49773</ObjectId>
+    <foreign-key id="37" parent="23" name="fkiuf9gwufew9y31h0rql66f9w9">
+      <ObjectId>100455</ObjectId>
       <ColNames>id_user</ColNames>
-      <RefTableId>49760</RefTableId>
+      <RefTableId>100447</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>users</RefTableName>
       <RefKeyName>users_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="37" parent="24" name="id">
+    <column id="38" parent="24" name="id">
       <Position>1</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>885</StateNumber>
-      <TypeId>23</TypeId>
+      <StateNumber>2132</StateNumber>
+      <TypeId>20</TypeId>
     </column>
-    <column id="38" parent="24" name="cotation">
+    <column id="39" parent="24" name="date_debut">
       <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <StateNumber>885</StateNumber>
-      <TypeId>1043</TypeId>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>2132</StateNumber>
+      <TypeId>1114</TypeId>
     </column>
-    <column id="39" parent="24" name="nb_spits">
+    <column id="40" parent="24" name="date_fin">
       <Position>3</Position>
-      <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>885</StateNumber>
-      <TypeId>23</TypeId>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>2132</StateNumber>
+      <TypeId>1114</TypeId>
     </column>
-    <column id="40" parent="24" name="id_site">
+    <column id="41" parent="24" name="id_site">
       <Position>4</Position>
-      <DataType>integer|0s</DataType>
-      <StateNumber>885</StateNumber>
-      <TypeId>23</TypeId>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>2132</StateNumber>
+      <TypeId>20</TypeId>
     </column>
-    <index id="41" parent="24" name="route_pkey">
-      <ObjectId>49750</ObjectId>
+    <column id="42" parent="24" name="id_user">
+      <Position>5</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>2132</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="43" parent="24" name="reservation_pkey">
+      <ObjectId>100419</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="42" parent="24" name="route_pkey">
-      <ObjectId>49751</ObjectId>
+    <key id="44" parent="24" name="reservation_pkey">
+      <ObjectId>100420</ObjectId>
       <ColNames>id</ColNames>
-      <UnderlyingIndexName>route_pkey</UnderlyingIndexName>
+      <UnderlyingIndexName>reservation_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="43" parent="24" name="fkiyagvbcmu9b3kdap8k92cw9mv">
-      <ObjectId>49778</ObjectId>
+    <foreign-key id="45" parent="24" name="fkru2kjjahn9yk6hrt23r3h8fed">
+      <ObjectId>100460</ObjectId>
       <ColNames>id_site</ColNames>
-      <RefTableId>49752</RefTableId>
+      <RefTableId>100426</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>site</RefTableName>
       <RefKeyName>site_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="44" parent="25" name="id">
+    <foreign-key id="46" parent="24" name="fk6u59qafuvateecqro99vxji4a">
+      <ObjectId>100465</ObjectId>
+      <ColNames>id_user</ColNames>
+      <RefTableId>100447</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>users</RefTableName>
+      <RefKeyName>users_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="47" parent="25" name="id">
       <Position>1</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>886</StateNumber>
-      <TypeId>23</TypeId>
+      <StateNumber>2133</StateNumber>
+      <TypeId>20</TypeId>
     </column>
-    <column id="45" parent="25" name="adresse">
+    <column id="48" parent="25" name="cotation">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>886</StateNumber>
+      <StateNumber>2133</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="46" parent="25" name="altitude">
+    <column id="49" parent="25" name="nb_spits">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>886</StateNumber>
+      <StateNumber>2133</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="47" parent="25" name="date">
+    <column id="50" parent="25" name="id_site">
       <Position>4</Position>
-      <DataType>timestamp|0s</DataType>
-      <StateNumber>886</StateNumber>
-      <TypeId>1114</TypeId>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>2133</StateNumber>
+      <TypeId>20</TypeId>
     </column>
-    <column id="48" parent="25" name="description">
-      <Position>5</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <StateNumber>886</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="49" parent="25" name="level">
-      <Position>6</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <StateNumber>886</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="50" parent="25" name="name">
-      <Position>7</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <StateNumber>886</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <index id="51" parent="25" name="site_pkey">
-      <ObjectId>49758</ObjectId>
+    <index id="51" parent="25" name="route_pkey">
+      <ObjectId>100424</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="52" parent="25" name="site_pkey">
-      <ObjectId>49759</ObjectId>
+    <key id="52" parent="25" name="route_pkey">
+      <ObjectId>100425</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>route_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="53" parent="25" name="fkiyagvbcmu9b3kdap8k92cw9mv">
+      <ObjectId>100470</ObjectId>
+      <ColNames>id_site</ColNames>
+      <RefTableId>100426</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>site</RefTableName>
+      <RefKeyName>site_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="54" parent="26" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2134</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="55" parent="26" name="adresse">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>2134</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="56" parent="26" name="altitude">
+      <Position>3</Position>
+      <DataType>double precision|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2134</StateNumber>
+      <TypeId>701</TypeId>
+    </column>
+    <column id="57" parent="26" name="date">
+      <Position>4</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>2134</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="58" parent="26" name="description">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>2134</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="59" parent="26" name="level">
+      <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>2134</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="60" parent="26" name="name">
+      <Position>7</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2134</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="61" parent="26" name="id_topo">
+      <Position>8</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>2134</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="62" parent="26" name="site_pkey">
+      <ObjectId>100432</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="63" parent="26" name="site_pkey">
+      <ObjectId>100433</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>site_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="53" parent="26" name="id">
+    <foreign-key id="64" parent="26" name="fk4li8cvvf6l948qgyyijae88jw">
+      <ObjectId>100475</ObjectId>
+      <ColNames>id_topo</ColNames>
+      <RefTableId>100439</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>topo</RefTableName>
+      <RefKeyName>topo_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="65" parent="27" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>887</StateNumber>
+      <StateNumber>2135</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="54" parent="26" name="age">
+    <column id="66" parent="27" name="id_commentaire">
       <Position>2</Position>
-      <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>887</StateNumber>
-      <TypeId>23</TypeId>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>2135</StateNumber>
+      <TypeId>20</TypeId>
     </column>
-    <column id="55" parent="26" name="password">
+    <column id="67" parent="27" name="id_site">
       <Position>3</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <StateNumber>887</StateNumber>
-      <TypeId>1043</TypeId>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>2135</StateNumber>
+      <TypeId>20</TypeId>
     </column>
-    <column id="56" parent="26" name="pro">
-      <Position>4</Position>
-      <DataType>boolean|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>887</StateNumber>
-      <TypeId>16</TypeId>
-    </column>
-    <column id="57" parent="26" name="pseudo">
-      <Position>5</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <StateNumber>887</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <index id="58" parent="26" name="users_pkey">
-      <ObjectId>49766</ObjectId>
+    <index id="68" parent="27" name="site_comment_pkey">
+      <ObjectId>100437</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="59" parent="26" name="users_pkey">
-      <ObjectId>49767</ObjectId>
+    <key id="69" parent="27" name="site_comment_pkey">
+      <ObjectId>100438</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>site_comment_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="70" parent="27" name="fks2t28wvffwrsdupcnm0oolpsk">
+      <ObjectId>100480</ObjectId>
+      <ColNames>id_commentaire</ColNames>
+      <RefTableId>100411</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>comment</RefTableName>
+      <RefKeyName>comment_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="71" parent="27" name="fkpo18aa0c4l66onsxkrwsluwv8">
+      <ObjectId>100485</ObjectId>
+      <ColNames>id_site</ColNames>
+      <RefTableId>100426</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>site</RefTableName>
+      <RefKeyName>site_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="72" parent="28" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2136</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="73" parent="28" name="region">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2136</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="74" parent="28" name="resume">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2136</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="75" parent="28" name="titre">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2136</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="76" parent="28" name="id_user">
+      <Position>5</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>2136</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="77" parent="28" name="topo_pkey">
+      <ObjectId>100445</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="78" parent="28" name="topo_pkey">
+      <ObjectId>100446</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>topo_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="79" parent="28" name="fkncul65ma0789762t4iukm4yt6">
+      <ObjectId>100490</ObjectId>
+      <ColNames>id_user</ColNames>
+      <RefTableId>100447</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>users</RefTableName>
+      <RefKeyName>users_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="80" parent="29" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2137</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="81" parent="29" name="age">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2137</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="82" parent="29" name="mail">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2137</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="83" parent="29" name="password">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2137</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="84" parent="29" name="pro">
+      <Position>5</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2137</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="85" parent="29" name="pseudo">
+      <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2137</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="86" parent="29" name="users_pkey">
+      <ObjectId>100453</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="87" parent="29" name="users_pkey">
+      <ObjectId>100454</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
       <Primary>1</Primary>

@@ -8,7 +8,7 @@ public class Route {
     @Id
     @GeneratedValue
     private Long id;
-    @ManyToOne
+    @ManyToOne(targetEntity = Site.class)
     @JoinColumn(name="id_site")
     private Site site;
     private String cotation;

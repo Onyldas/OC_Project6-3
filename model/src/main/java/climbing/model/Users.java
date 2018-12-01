@@ -3,6 +3,7 @@ package climbing.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Users {
@@ -10,7 +11,11 @@ public class Users {
     @Id
     @GeneratedValue
     private Long id;
+    @NotNull
     private String pseudo;
+    @NotNull
+    private String mail;
+    @NotNull
     private String password;
     private int age;
     private boolean pro;
@@ -18,11 +23,12 @@ public class Users {
     public Users() {
     }
 
-    public Users(String pseudo, String password, int age, boolean pro) {
+    public Users(String pseudo, String mail, String password, int age) {
         this.pseudo = pseudo;
+        this.mail = mail;
         this.password = password;
         this.age = age;
-        this.pro = pro;
+        this.pro = false;
     }
 
     public Long getId() {

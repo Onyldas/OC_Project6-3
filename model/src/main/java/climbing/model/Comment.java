@@ -1,6 +1,7 @@
 package climbing.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
@@ -9,22 +10,19 @@ public class Comment {
     @Id
     @GeneratedValue
     private Long id;
+    @NotNull
     private String content;
-    @ManyToOne
+    @ManyToOne (targetEntity = Users.class)
     @JoinColumn(name="id_user")
     private Users user;
+    @NotNull
     private Date date;
     private int note;
-    @ManyToOne
-    @JoinColumn(name="id_site")
-    private Site site;
 
-    public Comment(String content, Users user, Date date, int note, Site site) {
+    public Comment(@NotNull String content, Users user, @NotNull Date date) {
         this.content = content;
         this.user = user;
         this.date = date;
-        this.note = note;
-        this.site = site;
     }
 
     public Comment() {
@@ -70,11 +68,4 @@ public class Comment {
         this.note = note;
     }
 
-    public Site getSite() {
-        return site;
-    }
-
-    public void setSite(Site site) {
-        this.site = site;
-    }
 }
