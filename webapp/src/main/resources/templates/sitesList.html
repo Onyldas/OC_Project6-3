@@ -16,9 +16,13 @@
                 <div class="col-md-12">
                     <h1>Voici la liste de tous les sites :</h1>
 
-                    <span th:text="'Pseudo: ' + ${pseudo}">Anonymus</span>
-
-
+                    <tr th:each="site : ${sites}">
+                        <td th:text="${site.id}">1</td>
+                        <td><a th:href="@{'/site/' + ${site.id}}" th:text="${site.name}">Piton des neiges</a></td>
+                        </br>
+                    </tr>
+                    <br/>
+                    <p><a href="/addSite2">Ajouter un site</a></p>
                 </div>
             </div>
 

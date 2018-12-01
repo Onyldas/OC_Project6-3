@@ -3,34 +3,36 @@ package climbing.webapp;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @Controller
 public class PageController {
 
     public String pseudo = "Charlie";
+
     @GetMapping("/")
-    public String DisplayIndex(){
+    public String DisplayIndex() {
         return "index";
     }
 
 
-
-
-    @GetMapping("/sitesList")
-    public String welcome(Model model) {
-        model.addAttribute("pseudo", pseudo);
-        return "sitesList";
-    }
-
     @GetMapping("/connexion")
-    public String DisplayConnexion(){
+    public String DisplayConnexion() {
         return "connexion";
     }
 
     @GetMapping("/inscription")
-    public String DisplayInscription(){
+    public String DisplayInscription() {
         return "inscription";
+    }
+
+    @ResponseBody
+    @GetMapping("/square/{number}")
+    public int calculateSquare(@PathVariable int number) {
+        return number * number;
     }
 
 }
