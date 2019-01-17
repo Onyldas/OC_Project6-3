@@ -16,15 +16,6 @@ public class SiteController {
     private SiteRepository siteRepository;
 
     @GetMapping(path = "/addSite")
-    public @ResponseBody
-    String addNewSite(@RequestParam String name) {
-        Site s = new Site();
-        s.setName(name);
-        siteRepository.save(s);
-        return "Saved";
-    }
-
-    @GetMapping(path = "/addSite2")
     public String addNewSite(Model model) {
         model.addAttribute("site", new Site());
         return "addSite";
@@ -37,21 +28,9 @@ public class SiteController {
         return "sitesList";
     }
 
-    /*@PostMapping(path = "sitesList")
-    public String postSites(Model model, @RequestParam String nom, @RequestParam String description) {
-        if (!nom.isEmpty()) {
-            Site s = new Site();
-            s.setName(nom);
-            s.setDescription(description);
-            siteRepository.save(s);
-        }
-        model.addAttribute("site", siteRepository.findAll());
-        return "sitesList";
-    }*/
-
     @GetMapping(path = "sitesList")
     public String getSites(Model model) {
-        model.addAttribute("site", siteRepository.findAll());
+        model.addAttribute("sites", siteRepository.findAll());
         return "sitesList";
     }
 
@@ -66,4 +45,16 @@ public class SiteController {
         }
     }
 
+
+    /*@PostMapping(path = "sitesList")
+    public String postSites(Model model, @RequestParam String nom, @RequestParam String description) {
+        if (!nom.isEmpty()) {
+            Site s = new Site();
+            s.setName(nom);
+            s.setDescription(description);
+            siteRepository.save(s);
+        }
+        model.addAttribute("site", siteRepository.findAll());
+        return "sitesList";
+    }*/
 }

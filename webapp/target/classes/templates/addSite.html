@@ -1,29 +1,83 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Site</title>
-    <link rel="stylesheet" href="/CSS/index.css"/>
-    <link rel="stylesheet" href="/CSS/bootstrap.css"/>
-</head>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Site</title>
+        <link rel="stylesheet" href="/CSS/addSite.css"/>
+        <link rel="stylesheet" href="/CSS/page.css"/>
+        <link rel="stylesheet" href="/CSS/bootstrap.css"/>
+    </head>
 
-<body>
-<div class="container">
+    <body>
 
-    <header th:insert="header"></header>
+        <header th:insert="header"></header>
 
-    <div class="row">
-        <div class="col-md-12">
-            <form th:object="${site}" th:method="post" th:action="@{/sitesList}">
-                <label for="name">Nom du site : </label>
-                <input type="text" id="name" th:field="*{name}">
-                <label for="description">Description : </label>
-                <input type="text" id="description" th:field="*{description}">
-                <input type="submit">
-            </form>
+        <div id="page" class="container">
+
+            <div class="row">
+                <div id="site_form" class="col-md-8 offset-2">
+                    <h2>Ajout d'un site d'escalade : </h2>
+                    <form th:object="${site}" th:method="post" th:action="@{/sitesList}">
+                        <div class="form-row">
+                            <div class="col-6">
+                                <label for="name">Nom du site : </label>
+                                <input type="text" id="name" class="form-control" th:field="*{name}">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-12">
+                                <label for="description">Description : </label>
+                                <textarea id="description" class="form-control" th:field="*{description}"
+                                          rows="3"></textarea>
+                                <small id="passwordHelpBlock" class="form-text text-muted">
+                                    N'hésitez pas à mettre le plus d'informations possible !
+                                </small>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-9">
+                                <label for="adresse">Adresse : </label>
+                                <input type="text" id="adresse" class="form-control" th:field="*{adresse}">
+                            </div>
+                            <div class="col-3">
+                                <label for="altitude">Altitude : </label>
+                                <div class="input-group mb-2 mr-sm-2">
+                                    <input type="number" id="altitude" class="form-control" th:field="*{altitude}">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">m</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-6">
+                                <label for="level">Niveau : </label>
+                                <input type="text" id="level" class="form-control" th:field="*{level}">
+                            </div>
+                            <div class="col-6">
+                                <label for="topo">Topo associé : </label>
+                                <select type="text" id="topo" class="custom-select" th:field="*{topo}">
+                                    <option selected value="1">Pas de topo</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div id="submit" class="col-2">
+                                <button type="submit" class="btn btn-primary">Envoyer</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3 offset-9">
+                    <a class="btn btn-outline-info" href="/sitesList">Retour</a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
-</body>
+    </body>
 </html>

@@ -1,15 +1,28 @@
-<div class="row">
-    <h1>Bienvenue sur OC Climbing</h1>
-    <div class="col-md-3">
-        <a href="/">Accueil</a>
-    </div>
-    <div class="col-md-3">
-        <a href="sitesList">Sites</a>
-    </div>
-    <div class="col-md-3">
-        <a href="inscription">Inscription</a>
-    </div>
-    <div class="col-md-3">
-        <a href="connexion">Connexion</a>
+<div class="container-fluid">
+    <div class="row align-items-end">
+
+        <div class="col-2 offset-1">
+            <img class="logo" src="/images/logo.svg" alt="Logo"/>
+        </div>
+
+        <div class="menus col-6">
+            <div class="row">
+                <div class="col-2 offset-1">
+                    <a th:href="@{/}">Le concept</a>
+                </div>
+                <div class="col-2">
+                    <a th:href="@{/sitesList}">Les sites</a>
+                </div>
+                <div class="col-2">
+                    <a th:href="@{/#}">Les topos</a>
+                </div>
+                <div class="col-2">
+                    <a th:href="@{/connexion}">Connexion</a>
+                </div>
+                <div class="col-2">
+                    <a th:href="@{/#}">About us</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

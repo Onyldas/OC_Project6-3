@@ -17,12 +17,14 @@ public class Reservation {
     private Site site;
     private Date date_debut;
     private Date date_fin;
+    private int people;
 
-    public Reservation(Users user, Site site, Date date_debut, Date date_fin) {
+    public Reservation(Users user, Site site, Date date_debut, Date date_fin, int people) {
         this.user = user;
         this.site = site;
         this.date_debut = date_debut;
         this.date_fin = date_fin;
+        this.people = people;
     }
 
     public Reservation() {
@@ -67,5 +69,13 @@ public class Reservation {
 
     public void setDate_fin(Date date_fin) {
         this.date_fin = date_fin;
+    }
+
+    public int getPeople() {
+        return people;
+    }
+
+    public void setPeople(int people) {
+        this.people = people;
     }
 }

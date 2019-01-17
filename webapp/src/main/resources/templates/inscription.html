@@ -3,14 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <title>Inscription</title>
-        <link rel="stylesheet" href="/CSS/index.css" />
-        <link rel="stylesheet" href="/CSS/bootstrap.css" />
+        <link rel="stylesheet" href="/CSS/page.css"/>
+        <link rel="stylesheet" href="/CSS/bootstrap.css"/>
     </head>
 
     <body>
-        <div class="container">
 
-            <header th:insert="header"></header>
+        <header th:insert="header"></header>
+
+        <div class="container">
 
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
@@ -18,19 +19,19 @@
                     <form method="post" action="inscription">
                         <p>
                             <label for="pseudo">Pseudo : </label>
-                            <input type="text" name="pseudo" id="pseudo" />
+                            <input type="text" name="pseudo" id="pseudo"/>
                         </p>
                         <p>
                             <label for="mail">Email : </label>
-                            <input type="email" name="mail" id="mail" />
+                            <input type="email" name="mail" id="mail"/>
                         </p>
                         <p>
                             <label for="age">Votre age : </label>
-                            <input type="number" name="age" id="age" />
+                            <input type="number" name="age" id="age"/>
                         </p>
                         <p>
                             <label for="motDePasse">Mot De Passe : </label>
-                            <input type="password" name="motDePasse" id="motDePasse" />
+                            <input type="password" name="motDePasse" id="motDePasse"/>
                         </p>
 
                         <input type="submit" value="Envoyer"/>
@@ -39,5 +40,5 @@
             </div>
 
         </div>
-</body>
+    </body>
 </html>

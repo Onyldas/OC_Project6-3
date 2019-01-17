@@ -1,42 +1,94 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Accueil</title>
-    <link rel="stylesheet" href="/CSS/index.css" />
-    <link rel="stylesheet" href="/CSS/bootstrap.css" />
-</head>
-<body>
-<div class="container">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta charset="UTF-8">
+        <title>Accueil</title>
+        <link rel="stylesheet" href="/CSS/index.css"/>
+        <link rel="stylesheet" href="/CSS/page.css"/>
+        <link rel="stylesheet" href="/CSS/bootstrap.css"/>
+    </head>
+    <body>
 
-    <header th:insert="header"></header>
+        <header th:insert="header"></header>
 
-    <div class="row">
-        <img class="col-md-12 col-md-offset-0" src="/images/wallpaper.jpg" alt="Let\'s climb !" />
-    </div>
+        <div class="container-fluid">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="/images/wallpaper.jpg" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="/images/wallpaper.jpg" alt="Second slide">
+                    </div>
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="/images/wallpaper.jpg" alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
 
-    <div class="row">
-        <div class="col-md-12 introduction">
-            <h3>Qu'est-ce qu'OC Climbing ?</h3>
-            <p>Ce site internet regroupe différentes informations sur les sites d'esclade. Vous pouvez y laisser vos commentaires ou mêmes vos expériences.
-                </br>N'hésitez pas non plus à passer dans la rubrique <a href="#">réservation</a> !</p>
         </div>
-    </div>
 
-    <div class = "row">
-        <div class="col-md-4 boite">
-            <h3><a href="/sites">Liste des différents sites</a></h3>
-            <p>Découvrez une liste exhaustive des différents sites/spots de plusieurs région en métropole et dans certains DOM français.
-                <span th:text="'Message: ' + ${message}"></span>
-            </p>
+        <div id="chiffres" class="container-fluid">
+            <div class="row align-items-center h-100">
+                <div class="col-2 offset-2">
+                    <img src="/images/picto_montagne.svg" class="pictogramme">
+                    <span class="chiffre">38 sites</span>
+                </div>
+
+                <div class="col-2 offset-1">
+                    <span class="chiffre">15 topos</span>
+                </div>
+
+                <div class="col-2 offset-1">
+                    <span class="chiffre">225 abonnés</span>
+                </div>
+            </div>
         </div>
 
-        <div class="col-md-4 boite">
-            <h3><a href="/topos">Faire décourvrir un site</a></h3>
-            <p>Ici, vous pouvez voir les différents topos disponibles à l'emprunt ou leur date de disponibilité. N'hésitez pas à en emprunter un vous même grâce à un petit formulaire simple.
-            </p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 introduction">
+                    <h3>Qu'est-ce qu'OC Climbing ?</h3>
+                    <p>Ce site internet regroupe différentes informations sur les sites d'escalade. Vous pouvez y
+                        laisser vos
+                        commentaires ou mêmes vos expériences. Vous pouvez même ajouter les spots que vous avez trouvé.
+                        </br>N'hésitez pas non plus à passer dans la rubrique <a href="#">réservation</a> pour réserver
+                        vos
+                        dates !</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 boite">
+                    <h3><a href="/sitesList">Liste des différents sites</a></h3>
+                    <p>Découvrez une liste exhaustive des différents sites/spots de plusieurs régions en métropole et
+                        dans
+                        certains DOM/TOM français.
+                        <span th:text="'Message: ' + ${message}"></span>
+                    </p>
+                </div>
+
+                <div class="col-md-4 boite">
+                    <h3><a href="/#">Consulter topos</a></h3>
+                    <p>Ici, vous pouvez voir les différents topos disponibles.
+                        N'hésitez pas à les consulter.
+                    </p>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-</body>
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="/JavaScript/bootstrap.js"></script>
+    </body>
 </html>
+
