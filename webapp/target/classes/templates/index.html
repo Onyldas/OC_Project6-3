@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <title>Accueil</title>
-        <link rel="stylesheet" href="/CSS/index.css"/>
         <link rel="stylesheet" href="/CSS/page.css"/>
         <link rel="stylesheet" href="/CSS/bootstrap.css"/>
+        <link rel="stylesheet" href="/CSS/index.css"/>
     </head>
     <body>
 
@@ -39,15 +39,17 @@
         <div id="chiffres" class="container-fluid">
             <div class="row align-items-center h-100">
                 <div class="col-2 offset-2">
-                    <img src="/images/picto_montagne.svg" class="pictogramme">
+                    <img src="/images/picto_montagne.svg" class="pictogramme" alt="Pictogramme Site">
                     <span class="chiffre">38 sites</span>
                 </div>
 
                 <div class="col-2 offset-1">
+                    <img src="/images/picto_topo.svg" class="pictogramme2" alt="Pictogramme Topo">
                     <span class="chiffre">15 topos</span>
                 </div>
 
                 <div class="col-2 offset-1">
+                    <img src="/images/picto_abonne.svg" class="pictogramme" alt="Pictogramme Abonné">
                     <span class="chiffre">225 abonnés</span>
                 </div>
             </div>
@@ -55,35 +57,81 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-12 introduction">
+                <div class="col-12 introduction">
                     <h3>Qu'est-ce qu'OC Climbing ?</h3>
                     <p>Ce site internet regroupe différentes informations sur les sites d'escalade. Vous pouvez y
-                        laisser vos
-                        commentaires ou mêmes vos expériences. Vous pouvez même ajouter les spots que vous avez trouvé.
-                        </br>N'hésitez pas non plus à passer dans la rubrique <a href="#">réservation</a> pour réserver
+                        laisser vos commentaires ou mêmes vos différentes expériences.
+                        <br/>Vous pouvez même ajouter les spots que vous avez trouvé.
+                        <br/>
+                        <br/>N'hésitez pas non plus à passer dans la rubrique <a href="#">réservation</a> pour réserver
                         vos
                         dates !</p>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-md-4 boite">
-                    <h3><a href="/sitesList">Liste des différents sites</a></h3>
-                    <p>Découvrez une liste exhaustive des différents sites/spots de plusieurs régions en métropole et
-                        dans
-                        certains DOM/TOM français.
-                        <span th:text="'Message: ' + ${message}"></span>
-                    </p>
+                <div class="col-12 boite">
+                    <div class="row justify-content-between">
+                        <div class="col explications">
+                            <h3><a href="/sitesList">Liste des différents sites</a></h3>
+                            <p>Découvrez une liste exhaustive des différents sites/spots de plusieurs régions en
+                                métropole et dans certains DOM/TOM français.
+                            </p>
+                        </div>
+                        <div class="col-2 boite_image">
+                            <a href="/sitesList"><img src="/images/loupe_montagne.svg" alt="Loupe_montagne" class="image_boite"></a>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="col-md-4 boite">
-                    <h3><a href="/#">Consulter topos</a></h3>
-                    <p>Ici, vous pouvez voir les différents topos disponibles.
-                        N'hésitez pas à les consulter.
-                    </p>
+            </div>
+            <div class="row">
+                <div class="col-12 boite">
+                    <div class="row justify-content-between">
+                        <div class="col explications">
+                            <h3><a href="/#">Consulter topos</a></h3>
+                            <p>Ici, vous pouvez voir les différents topos disponibles.
+                                N'hésitez pas à les consulter.
+                            </p>
+                        </div>
+                        <div class="col-2 boite_image">
+                            <a href="/#"><img src="/images/topos.svg" alt="topos" class="image_boite"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 boite">
+                    <div class="row justify-content-between">
+                        <div class="col explications">
+                            <h3><a href="/#">Pour qui ?</a></h3>
+                            <p>Tout le monde ! Ce site regroupe de nombreux spots, pour les grimpeurs débutants aux
+                                grimpeurs confirmés.
+                            </p>
+                        </div>
+                        <div class="col-2 boite_image">
+                            <a href="/#"><img src="/images/finger.svg" alt="Pour qui ?" class="image_boite"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 boite">
+                    <div class="row justify-content-between">
+                        <div class="col explications">
+                            <h3><a href="/#">Réserver un site</a></h3>
+                            <p>Passer par la plateforme web pour réserver un site d'escalade (seul ou à plusieurs).
+                            </p>
+                        </div>
+                        <div class="col-2 boite_image">
+                            <a href="/#"><img src="/images/placeholder.svg" alt="Reservation placeholder" class="image_boite"></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <footer th:insert="footer"></footer>
+
         <!-- Bootstrap core JavaScript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->

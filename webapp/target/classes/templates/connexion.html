@@ -3,31 +3,35 @@
     <head>
         <meta charset="UTF-8">
         <title>Connexion</title>
-        <link rel="stylesheet" href="/CSS/page.css" />
-        <link rel="stylesheet" href="/CSS/bootstrap.css" />
+        <link rel="stylesheet" href="/CSS/page.css"/>
+        <link rel="stylesheet" href="/CSS/bootstrap.css"/>
     </head>
 
     <body>
-        <div class="container">
 
         <header th:insert="header"></header>
+
+
+        <div class="container">
 
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <form method="post" action="/connexion">
                         <p>
                             <label for="pseudo">Pseudo : </label>
-                            <input type="text" name="pseudo" id="pseudo" />
+                            <input type="text" name="pseudo" id="pseudo"/>
                         </p>
                         <p>
                             <label for="motDePasse">Mot De Passe : </label>
-                            <input type="password" name="motDePasse" id="motDePasse" />
+                            <input type="password" name="motDePasse" id="motDePasse"/>
                         </p>
-
                         <input type="submit" value="Envoyer"/>
                     </form>
                 </div>
             </div>
         </div>
+
+        <footer th:insert="footer"></footer>
+
     </body>
 </html>

@@ -15,8 +15,12 @@
         <div id="page" class="container">
 
             <div class="row">
+                <div class="col-12 introduction">
+                    <h3>Ajout d'un site d'escalade : </h3>
+                </div>
+            </div>
+            <div class="row">
                 <div id="site_form" class="col-md-8 offset-2">
-                    <h2>Ajout d'un site d'escalade : </h2>
                     <form th:object="${site}" th:method="post" th:action="@{/sitesList}">
                         <div class="form-row">
                             <div class="col-6">
@@ -57,9 +61,9 @@
                             <div class="col-6">
                                 <label for="topo">Topo associé : </label>
                                 <select type="text" id="topo" class="custom-select" th:field="*{topo}">
-                                    <option selected value="1">Pas de topo</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                    <option th:each="topo : ${topos}" th:value="${topo.id}" th:text="${topo.titre}">Pas
+                                        de topo
+                                    </option>
                                 </select>
                             </div>
                         </div>
@@ -79,5 +83,6 @@
             </div>
         </div>
 
+        <footer th:insert="footer"></footer>
     </body>
 </html>

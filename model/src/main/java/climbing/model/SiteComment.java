@@ -10,7 +10,7 @@ public class SiteComment {
     @Column(name = "id")
     private int id;
     @ManyToOne
-    @JoinColumn(name="id_commentaire")
+    @JoinColumn(name="id_comment")
     private Comment comment;
     @ManyToOne
     @JoinColumn(name="id_site")

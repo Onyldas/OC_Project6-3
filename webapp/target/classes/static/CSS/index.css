@@ -23,4 +23,25 @@
 .pictogramme{
     height: 52px;
 }
+.pictogramme2{
+    height: 65px;
+}
 
+.boite{
+    margin: 1em; /*marge extérieure(haut, droite, bas, gauche)*/
+    border-top: 2px solid darkgray;
+    padding-top: 1em;
+}
+.boite h3{
+    color: darkred;
+}
+.boite h3 a{
+    text-decoration: none;
+    color: darkred;
+}
+.image_boite {
+    height: 100px;
+}
+.boite_image{
+    text-align: center;
+}

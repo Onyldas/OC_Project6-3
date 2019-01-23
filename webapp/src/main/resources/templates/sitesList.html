@@ -5,6 +5,7 @@
         <title>Liste des différentes sites</title>
         <link rel="stylesheet" href="/CSS/page.css"/>
         <link rel="stylesheet" href="/CSS/bootstrap.css"/>
+        <link rel="stylesheet" href="/CSS/index.css"/>
     </head>
 
     <body>
@@ -12,20 +13,35 @@
         <header th:insert="header"></header>
 
         <div class="container">
-
             <div class="row">
-                <div class="col-md-12">
-                    <h1>Liste de tous les sites d'escalade :</h1>
-                    <tr th:each="site : ${sites}">
-                        <td th:text="${site.id}">1</td>
-                        <td><a th:href="@{'/site/' + ${site.id}}" th:text="${site.name}">Piton des neiges</a></td>
-                        </br>
-                    </tr>
-                    <br/>
-                    <a class="btn btn-outline-info" href="/addSite">Ajouter un site</a>
+                <div class="col-12 introduction">
+                    <h3>Liste de tous les sites d'escalade :</h3>
+                    <p>Choisissez le site qui vous conviendrait le mieux : </p>
                 </div>
             </div>
 
+            <div class="row" th:each="site : ${sites}">
+                <div class="col-12 boite">
+                    <div class="row justify-content-between">
+                        <div class="col explications">
+                            <h3><a th:text="${site.name}">Nom du site</a></h3>
+                            <p th:text="${site.level}">Difficulté</p>
+                            <a class="btn btn-outline-info" th:href="@{'/site/' + ${site.id}}">Voir le site</a>
+                        </div>
+                        <div class="col-2 boite_image">
+                            <a th:href="@{'/site/' + ${site.id}}"><img th:src="@{/images/placeholder.svg}" alt="Reservation placeholder" class="image_boite"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2 offset-10">
+                    <a class="btn btn-outline-info" href="/addSite">Ajouter un site</a>
+                </div>
+            </div>
         </div>
+
+        <footer th:insert="footer"></footer>
+
     </body>
 </html>

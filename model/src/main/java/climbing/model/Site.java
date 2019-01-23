@@ -13,7 +13,7 @@ public class Site {
     @NotNull
     private String name;
     private String description;
-    private Date date;
+    private String date;
     private String level;
     private double altitude;
     private String adresse;
@@ -21,7 +21,7 @@ public class Site {
     @JoinColumn(name="id_topo")
     private Topo topo;
 
-    public Site(@NotNull String name, String description, Date date, String level, double altitude, String adresse, Topo topo) {
+    public Site(@NotNull String name, String description, String date, String level, double altitude, String adresse, Topo topo) {
         this.name = name;
         this.description = description;
         this.date = date;
@@ -58,11 +58,11 @@ public class Site {
         this.description = description;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

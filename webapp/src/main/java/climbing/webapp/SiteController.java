@@ -1,12 +1,15 @@
 package climbing.webapp;
 
 import climbing.consumer.SiteRepository;
+import climbing.consumer.TopoRepository;
 import climbing.model.Site;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 @Controller
@@ -14,15 +17,27 @@ public class SiteController {
 
     @Autowired
     private SiteRepository siteRepository;
+    @Autowired
+    private TopoRepository topoRepository;
 
     @GetMapping(path = "/addSite")
     public String addNewSite(Model model) {
         model.addAttribute("site", new Site());
+        model.addAttribute("topos", topoRepository.findAll());
         return "addSite";
     }
 
     @PostMapping(path = "sitesList")
     public String postSites(Model model, @ModelAttribute Site site) {
+        /*System.out.println("1----------------------------->" + site.getId());
+        System.out.println("1----------------------------->" + site.getName());
+        System.out.println("1----------------------------->" + site.getDescription());
+        System.out.println("1----------------------------->" + site.getAdresse());
+        System.out.println("1----------------------------->" + site.getAltitude());
+        System.out.println("1----------------------------->" + site.getTopo());
+        System.out.println("1----------------------------->" + site.getLevel());
+        System.out.println("1----------------------------->" + site.getDate());*/
+        site.setDate(getDate());
         siteRepository.save(site);
         model.addAttribute("sites", siteRepository.findAll());
         return "sitesList";
@@ -31,6 +46,7 @@ public class SiteController {
     @GetMapping(path = "sitesList")
     public String getSites(Model model) {
         model.addAttribute("sites", siteRepository.findAll());
+        getDate();
         return "sitesList";
     }
 
@@ -57,4 +73,8 @@ public class SiteController {
         model.addAttribute("site", siteRepository.findAll());
         return "sitesList";
     }*/
+
+    private String getDate(){
+        return DateTimeFormatter.ofPattern("ddMMyyyy").format(LocalDate.now());
+    }
 }

@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Liste des utilisateurs</title>
-    <link rel="stylesheet" href="/CSS/page.css" />
-    <link rel="stylesheet" href="/CSS/bootstrap.css" />
-</head>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Liste des utilisateurs</title>
+        <link rel="stylesheet" href="/CSS/page.css"/>
+        <link rel="stylesheet" href="/CSS/bootstrap.css"/>
+    </head>
 
-<body>
-<div class="container">
+    <body>
 
-    <header th:insert="header"></header>
+        <header th:insert="header"></header>
 
-    <div class="row">
-        <div class="col-md-12">
-            <h1>Voici la liste de tous utilisateurs :</h1>
-
-            <tr th:each="user : ${users}">
-                <td th:text="${user.id}">1</td>
-                <td><a th:href="@{'/user/' + ${user.id}}" th:text="${user.pseudo}">Sophie K ...</a></td>
-                </br>
-            </tr>
-
-
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Voici la liste de tous utilisateurs :</h1>
+                    <tr th:each="user : ${users}">
+                        <td th:text="${user.id}">1</td>
+                        <td><a th:href="@{'/user/' + ${user.id}}" th:text="${user.pseudo}">Sophie K ...</a></td>
+                        <br/>
+                    </tr>
+                </div>
+            </div>
         </div>
-    </div>
 
+        <footer th:insert="footer"></footer>
 
-</div>
-</body>
+    </body>
 </html>

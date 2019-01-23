@@ -5,6 +5,7 @@
         <title th:text="${site.get().getName()}">Site</title>
         <link rel="stylesheet" href="/CSS/page.css"/>
         <link rel="stylesheet" href="/CSS/bootstrap.css"/>
+        <link rel="stylesheet" href="/CSS/site.css"/>
     </head>
 
     <body>
@@ -14,11 +15,30 @@
         <div class="container">
 
             <div class="row">
-                <div class="col-md-12">
-                    <h2 th:text="${site.get().getName()}">Titre du site</h2>
-                    <p th:text="${site.get().getDescription()}">Contenu/Description du site</p>
+                <div class="col-12 introduction">
+                    <h3 th:text="${site.get().getName()}">Titre du site</h3>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-7 description_site">
+                    <span class="attribut">Description : </span>
+                    <p th:text="${site.get().getDescription()}">Contenu/Description du site</p>
+                    <span class="attribut">Difficulté : </span><span th:text="${site.get().getLevel()}" class="difficulte">Facile</span>
+                </div>
+                <div class="col-5 image_site">
+                    <img src="/images/site1.png" alt="Photo du site">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-7 adresse_site">
+                    <span class="attribut">Adresse : </span><span th:text="${site.get().getAdresse()}">5rue...</span>
+                    <br/><span class="attribut">Date : </span><span th:text="${site.get().getDate()}">05/12/...</span>
+                </div>
+                <div class="col-5 planing_site">
+                    <span class="attribut">Altitude : </span><span th:text="${site.get().getAltitude()}">300m...</span>m
+                </div>
+            </div>
+
             <!--<div class="row">
                 <div class="col-md-12">
                     <img th:src="static/images/site${site.get().getId()}.png" alt="Image"/>
@@ -32,5 +52,8 @@
             </div>
 
         </div>
+
+        <footer th:insert="footer"></footer>
+
     </body>
 </html>

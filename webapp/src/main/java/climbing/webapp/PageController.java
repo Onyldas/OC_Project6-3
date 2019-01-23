@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class PageController {
 
-    public String pseudo = "Charlie";
-
     @GetMapping("/")
     public String DisplayIndex() {
         return "index";
