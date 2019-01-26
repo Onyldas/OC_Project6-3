@@ -55,6 +55,7 @@ public class SiteController {
         Optional<Site> site = siteRepository.findById(id);
         if (site.isPresent()) {
             model.addAttribute("site", site);
+            model.addAttribute("formatedDate", formatDate(site.get().getDate()));
             return "site";
         } else {
             return null;
@@ -76,5 +77,11 @@ public class SiteController {
 
     private String getDate(){
         return DateTimeFormatter.ofPattern("ddMMyyyy").format(LocalDate.now());
+    }
+    private String formatDate(String dateBrut){
+        String day = dateBrut.substring(0,2);
+        String month = dateBrut.substring(2,4);
+        String year = dateBrut.substring(4);
+        return (day + "/" + month + "/" + year);
     }
 }

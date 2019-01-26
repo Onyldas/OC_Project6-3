@@ -25,14 +25,14 @@
                     <p th:text="${site.get().getDescription()}">Contenu/Description du site</p>
                     <span class="attribut">Difficulté : </span><span th:text="${site.get().getLevel()}" class="difficulte">Facile</span>
                 </div>
-                <div class="col-5 image_site">
-                    <img src="/images/site1.png" alt="Photo du site">
+                <div class="col-5">
+                    <img src="/images/site1.png" alt="Photo du site" class="image_site">
                 </div>
             </div>
             <div class="row">
                 <div class="col-7 adresse_site">
                     <span class="attribut">Adresse : </span><span th:text="${site.get().getAdresse()}">5rue...</span>
-                    <br/><span class="attribut">Date : </span><span th:text="${site.get().getDate()}">05/12/...</span>
+                    <br/><span class="attribut">Date : </span><span th:text="${formatedDate}">05/12/...</span>
                 </div>
                 <div class="col-5 planing_site">
                     <span class="attribut">Altitude : </span><span th:text="${site.get().getAltitude()}">300m...</span>m
