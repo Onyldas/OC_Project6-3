@@ -1,0 +1,18 @@
+Mapping
+
+Template  Function    Controller    GET/POST
+
+index.html  DisplayIndex    PageController  GET
+connexion.html  DisplayConnexion    PageController  GET
+inscription.html    DisplayInscription  PageController  GET
+
+reservation.html    Reservation ReservationController   GET
+
+addSite.html    addNewSite  SiteController  GET
+sitesList.html  getSites    SiteController  GET
+sitesList.html  postSites   SiteController  POST
+site.html   getSiteById SiteController  GET
+
+toposList.html  getTopos    TopoController  GET
+
+users.html  getUsers    UserController  GET

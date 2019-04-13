@@ -29,14 +29,6 @@ public class SiteController {
 
     @PostMapping(path = "sitesList")
     public String postSites(Model model, @ModelAttribute Site site) {
-        /*System.out.println("1----------------------------->" + site.getId());
-        System.out.println("1----------------------------->" + site.getName());
-        System.out.println("1----------------------------->" + site.getDescription());
-        System.out.println("1----------------------------->" + site.getAdresse());
-        System.out.println("1----------------------------->" + site.getAltitude());
-        System.out.println("1----------------------------->" + site.getTopo());
-        System.out.println("1----------------------------->" + site.getLevel());
-        System.out.println("1----------------------------->" + site.getDate());*/
         site.setDate(getDate());
         siteRepository.save(site);
         model.addAttribute("sites", siteRepository.findAll());

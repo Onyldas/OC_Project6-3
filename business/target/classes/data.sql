@@ -24,7 +24,4 @@ VALUES
   (104,'Bella Vista','Le mur naturel est ensoleillé l après midi et possède une exposition Sud-est. On peut l atteindre après 5min de marche à plat ; le port du casque conseillé, pied des voies sur une petite vire (attention!).',02032012,'Difficile',20,'Saint Paul - Bassin Long', 1)
 ;
 
-INSERT INTO route(id ,cotation, nb_spits, id_site)
-VALUES
-  (1, '3b', 5, 100)
-;
+-- Pour insérer facilement du contenu CTRL + J | ins

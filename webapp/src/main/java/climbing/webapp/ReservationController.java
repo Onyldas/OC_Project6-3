@@ -13,7 +13,7 @@ public class ReservationController {
     private ReservationRepository reservationRepository;
 
     @GetMapping(path = "/reservation")
-    public String reservation(Model model){
+    public String Reservation(Model model){
         return "reservation";
     }
 }
