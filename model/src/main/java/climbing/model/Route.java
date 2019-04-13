@@ -8,14 +8,14 @@ public class Route {
     @Id
     @GeneratedValue
     private Long id;
-    @ManyToOne(targetEntity = Site.class)
-    @JoinColumn(name="id_site")
-    private Site site;
+    @ManyToOne(targetEntity = Sector.class)
+    @JoinColumn(name="id_sector")
+    private Sector sector;
     private String cotation;
     private int nbSpits;
 
-    public Route(Site site, String cotation, int nbSpits) {
-        this.site = site;
+    public Route(Sector sector, String cotation, int nbSpits) {
+        this.sector = sector;
         this.cotation = cotation;
         this.nbSpits = nbSpits;
     }
@@ -31,12 +31,12 @@ public class Route {
         this.id = id;
     }
 
-    public Site getSite() {
-        return site;
+    public Sector getSite() {
+        return sector;
     }
 
-    public void setSite(Site site) {
-        this.site = site;
+    public void setSite(Sector sector) {
+        this.sector = sector;
     }
 
     public String getCotation() {
