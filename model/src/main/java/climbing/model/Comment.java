@@ -17,7 +17,6 @@ public class Comment {
     private Users user;
     @NotNull
     private Date date;
-    private int note;
 
     public Comment(@NotNull String content, Users user, @NotNull Date date) {
         this.content = content;
@@ -58,14 +57,6 @@ public class Comment {
 
     public void setDate(Date date) {
         this.date = date;
-    }
-
-    public int getNote() {
-        return note;
-    }
-
-    public void setNote(int note) {
-        this.note = note;
     }
 
 }

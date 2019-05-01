@@ -13,15 +13,15 @@ public class Reservation {
     @JoinColumn(name="id_user")
     private Users user;
     @ManyToOne (targetEntity = Site.class)
-    @JoinColumn(name="id_site")
-    private Site site;
+    @JoinColumn(name="id_topo")
+    private Topo topo;
     private Date date_debut;
     private Date date_fin;
     private int people;
 
-    public Reservation(Users user, Site site, Date date_debut, Date date_fin, int people) {
+    public Reservation(Users user, Topo topo, Date date_debut, Date date_fin, int people) {
         this.user = user;
-        this.site = site;
+        this.topo = topo;
         this.date_debut = date_debut;
         this.date_fin = date_fin;
         this.people = people;
@@ -47,12 +47,12 @@ public class Reservation {
         this.user = user;
     }
 
-    public Site getSite() {
-        return site;
+    public Topo getSite() {
+        return topo;
     }
 
-    public void setSite(Site site) {
-        this.site = site;
+    public void setSite(Topo topo) {
+        this.topo = topo;
     }
 
     public Date getDate_debut() {

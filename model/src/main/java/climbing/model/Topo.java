@@ -12,16 +12,16 @@ public class Topo {
     @NotNull
     private String titre;
     @NotNull
-    private String region;
+    private String departement;
     @NotNull
     private String resume;
     @ManyToOne(targetEntity = Users.class)
-    @JoinColumn(name="id_user")
+    @JoinColumn(name="id_auteur")
     private Users user;
 
     public Topo(@NotNull String titre, @NotNull String region, @NotNull String resume, Users user) {
         this.titre = titre;
-        this.region = region;
+        this.departement = region;
         this.resume = resume;
         this.user = user;
     }
@@ -45,12 +45,12 @@ public class Topo {
         this.titre = titre;
     }
 
-    public String getRegion() {
-        return region;
+    public String getDepartement() {
+        return departement;
     }
 
-    public void setRegion(String region) {
-        this.region = region;
+    public void setDepartement(String departement) {
+        this.departement = departement;
     }
 
     public String getResume() {

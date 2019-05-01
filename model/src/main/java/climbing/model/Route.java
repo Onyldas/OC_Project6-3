@@ -8,16 +8,22 @@ public class Route {
     @Id
     @GeneratedValue
     private Long id;
+    private String name;
     @ManyToOne(targetEntity = Sector.class)
     @JoinColumn(name="id_sector")
     private Sector sector;
-    private String cotation;
+    @ManyToOne(targetEntity = Rating.class)
+    @JoinColumn(name="id_rating")
+    private Rating rating;
     private int nbSpits;
+    private int nbPitches;
 
-    public Route(Sector sector, String cotation, int nbSpits) {
+    public Route(String name, Sector sector, Rating rating, int nbSpits, int nbPitches) {
+        this.name = name;
         this.sector = sector;
-        this.cotation = cotation;
+        this.rating = rating;
         this.nbSpits = nbSpits;
+        this.nbPitches = nbPitches;
     }
 
     public Route() {
@@ -31,20 +37,28 @@ public class Route {
         this.id = id;
     }
 
-    public Sector getSite() {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Sector getSector() {
         return sector;
     }
 
-    public void setSite(Sector sector) {
+    public void setSector(Sector sector) {
         this.sector = sector;
     }
 
-    public String getCotation() {
-        return cotation;
+    public Rating getRating() {
+        return rating;
     }
 
-    public void setCotation(String cotation) {
-        this.cotation = cotation;
+    public void setRating(Rating rating) {
+        this.rating = rating;
     }
 
     public int getNbSpits() {
@@ -53,5 +67,13 @@ public class Route {
 
     public void setNbSpits(int nbSpits) {
         this.nbSpits = nbSpits;
+    }
+
+    public int getNbPitches() {
+        return nbPitches;
+    }
+
+    public void setNbPitches(int nbPitches) {
+        this.nbPitches = nbPitches;
     }
 }

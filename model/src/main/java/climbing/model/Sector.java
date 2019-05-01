@@ -10,13 +10,15 @@ public class Sector {
     @ManyToOne(targetEntity = Site.class)
     @JoinColumn(name="id_site")
     private Site site;
-    private String Nom;
-    private String Description;
+    private String name;
+    private Boolean defaultSector;
+    private String description;
 
-    public Sector(Site site, String nom, String description) {
+    public Sector(Site site, String name, Boolean defaultSector, String description) {
         this.site = site;
-        Nom = nom;
-        Description = description;
+        this.name = name;
+        this.defaultSector = defaultSector;
+        this.description = description;
     }
 
     public Sector(){
@@ -38,19 +40,27 @@ public class Sector {
         this.site = site;
     }
 
-    public String getNom() {
-        return Nom;
+    public String getName() {
+        return name;
     }
 
-    public void setNom(String nom) {
-        Nom = nom;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Boolean getDefaultSector() {
+        return defaultSector;
+    }
+
+    public void setDefaultSector(Boolean defaultSector) {
+        this.defaultSector = defaultSector;
     }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
     public void setDescription(String description) {
-        Description = description;
+        this.description = description;
     }
 }

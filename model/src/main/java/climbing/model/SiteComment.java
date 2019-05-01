@@ -4,47 +4,21 @@ import javax.persistence.*;
 
 @Entity
 public class SiteComment {
+    @EmbeddedId
+    private SiteCommentId id;
 
-    @Id
-    @GeneratedValue
-    @Column(name = "id")
-    private int id;
-    @ManyToOne
-    @JoinColumn(name="id_comment")
-    private Comment comment;
-    @ManyToOne
-    @JoinColumn(name="id_site")
-    private Site site;
+    public SiteComment(SiteCommentId id) {
+        this.id = id;
+    }
 
     public SiteComment() {
     }
 
-    public SiteComment(Comment comment, Site site) {
-        this.comment = comment;
-        this.site = site;
-    }
-
-    public int getId() {
+    public SiteCommentId getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(SiteCommentId id) {
         this.id = id;
-    }
-
-    public Comment getComment() {
-        return comment;
-    }
-
-    public void setComment(Comment comment) {
-        this.comment = comment;
-    }
-
-    public Site getSite() {
-        return site;
-    }
-
-    public void setSite(Site site) {
-        this.site = site;
     }
 }

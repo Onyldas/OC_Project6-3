@@ -25,7 +25,6 @@
                     <div class="row justify-content-between">
                         <div class="col explications">
                             <h3><a th:text="${site.name}">Nom du site</a></h3>
-                            <p th:text="${site.level}">Difficulté</p>
                             <a class="btn btn-outline-info" th:href="@{'/site/' + ${site.id}}">Voir le site</a>
                         </div>
                         <div class="col-2 boite_image">
