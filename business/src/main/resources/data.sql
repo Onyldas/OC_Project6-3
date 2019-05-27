@@ -25,11 +25,11 @@ VALUES
 
 INSERT INTO site (id, name, description, date, postal_code, municipality, adresse, cotation_min_id, cotation_max_id, cotation_moyenne_id, altitude, id_topo)
 VALUES
-  (100,'Piton des neiges','Site naturel proche du sommet du piton des neiges. Après le chalet, continuez tout droit sur à peu près 1km et retrouvez le mur du côté Ouest. (voir photos)',24102014,'97419','Reunion','Piton des Neiges, La Réunion',3,9,6,2895,1),
-  (101,'Piton de la Fournaise','Le volcan actif de l''île de la Réunion. Parfait pour découvrir l''endroit. Une vue magnifique. Attention tout de même aux roches volcaniques qui sont très coupantes. Ne pas y aller lorsque le volcan est actif.',18052014,'97420','Reunion','Piton de la Fournaise, La Réunion',2,8,4,2543,1),
-  (102,'Colima100','Franckie s’est décarcassé pour vous et vous offre le topo des nouvelles voies équipées dans la ravine des Colimaçons !',11122016,'97416', 'Saint Leu','Les Colimaçons',1,5,3,100,1),
-  (103,'Morinda', 'L ensoliellement est présent l après midi sur ce site à deux voies équipés de plaquettes et de relais avec anneaux. Possibilité d’équiper une moulinette depuis le haut.',01012012,'97411','Saint Paul','Saint Paul - Bassin Long',2,10,6,20,1),
-  (104,'Bella Vista','Le mur naturel est ensoleillé l après midi et possède une exposition Sud-est. On peut l atteindre après 5min de marche à plat ; le port du casque conseillé, pied des voies sur une petite vire (attention!).',02032012,'97411','Saint Paul','Saint Paul - Bassin Long',1,9,4,20,1)
+  (100,'Piton des neiges','Site naturel proche du sommet du piton des neiges. Après le chalet, continuez tout droit sur à peu près 1km et retrouvez le mur du côté Ouest. (voir photos)','24102014','97419','Reunion','Piton des Neiges, La Réunion',3,9,6,2895,1),
+  (101,'Piton de la Fournaise','Le volcan actif de l''île de la Réunion. Parfait pour découvrir l''endroit. Une vue magnifique. Attention tout de même aux roches volcaniques qui sont très coupantes. Ne pas y aller lorsque le volcan est actif.','18052014','97420','Reunion','Piton de la Fournaise, La Réunion',2,8,4,2543,1),
+  (102,'Colima100','Franckie s’est décarcassé pour vous et vous offre le topo des nouvelles voies équipées dans la ravine des Colimaçons !','11122016','97416', 'Saint Leu','Les Colimaçons',1,5,3,100,1),
+  (103,'Morinda', 'L ensoliellement est présent l après midi sur ce site à deux voies équipés de plaquettes et de relais avec anneaux. Possibilité d’équiper une moulinette depuis le haut.','01012012','97411','Saint Paul','Saint Paul - Bassin Long',2,10,6,20,1),
+  (104,'Bella Vista','Le mur naturel est ensoleillé l après midi et possède une exposition Sud-est. On peut l atteindre après 5min de marche à plat ; le port du casque conseillé, pied des voies sur une petite vire (attention!).','02032012','97411','Saint Paul','Saint Paul - Bassin Long',1,9,4,20,1)
 ;
 
 -- Pour insérer facilement du contenu CTRL + J | ins

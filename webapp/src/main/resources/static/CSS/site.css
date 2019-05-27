@@ -11,3 +11,9 @@
     border: 1px solid #853321;
     border-radius: 10px;
 }
+.form-check-label{
+    cursor: pointer;
+}
+.form-check-input{
+    cursor: pointer;
+}

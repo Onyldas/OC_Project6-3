@@ -16,3 +16,7 @@ site.html   getSiteById SiteController  GET
 toposList.html  getTopos    TopoController  GET
 
 users.html  getUsers    UserController  GET
+
+error.html  handleError MyErrorControler    REQUEST
+error-404.html  handleError MyErrorControler    REQUEST
+error-500.html  handleError MyErrorControler    REQUEST

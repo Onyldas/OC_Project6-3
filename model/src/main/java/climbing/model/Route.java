@@ -15,8 +15,8 @@ public class Route {
     @ManyToOne(targetEntity = Rating.class)
     @JoinColumn(name="id_rating")
     private Rating rating;
-    private int nbSpits;
-    private int nbPitches;
+    private int nbSpits; // les splits sont des points d'ancrages sur la voie
+    private int nbPitches; // les longueurs sont des "morceaux" de voie
 
     public Route(String name, Sector sector, Rating rating, int nbSpits, int nbPitches) {
         this.name = name;

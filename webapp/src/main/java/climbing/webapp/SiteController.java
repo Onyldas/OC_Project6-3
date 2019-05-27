@@ -1,7 +1,8 @@
 package climbing.webapp;
 
-import climbing.consumer.SiteRepository;
-import climbing.consumer.TopoRepository;
+import climbing.consumer.*;
+import climbing.model.Route;
+import climbing.model.Sector;
 import climbing.model.Site;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +20,12 @@ public class SiteController {
     private SiteRepository siteRepository;
     @Autowired
     private TopoRepository topoRepository;
+    @Autowired
+    private RouteRepository routeRepository;
+    @Autowired
+    private RatingRepository ratingRepository;
+    @Autowired
+    private SectorRepository sectorRepository;
 
     @GetMapping(path = "/addSite")
     public String addNewSite(Model model) {
@@ -29,7 +36,7 @@ public class SiteController {
 
     @PostMapping(path = "sitesList")
     public String postSites(Model model, @ModelAttribute Site site) {
-        site.setDate(getDate());
+        site.setDate(getTodaysDate());
         siteRepository.save(site);
         model.addAttribute("sites", siteRepository.findAll());
         return "sitesList";
@@ -38,16 +45,48 @@ public class SiteController {
     @GetMapping(path = "sitesList")
     public String getSites(Model model) {
         model.addAttribute("sites", siteRepository.findAll());
-        getDate();
+        getTodaysDate();
         return "sitesList";
     }
 
+    /**
+     * Here we take to parameters :
+     * @param id
+     * The id will help us find the site we want
+     * With it, we can use the CRUD method findById()
+     * @param model
+     * In the model we put the site
+     * But also a new Route (in it, we'll put the information)
+     * Then we'll have to display the routes if they exist
+     * @return the site page
+     */
     @GetMapping(path = "site/{id}")
     public String getSiteById(@PathVariable Long id, Model model) {
         Optional<Site> site = siteRepository.findById(id);
         if (site.isPresent()) {
-            model.addAttribute("site", site);
-            model.addAttribute("formatedDate", formatDate(site.get().getDate()));
+            siteModel(model, site);
+            return "site";
+        } else {
+            return "error-500";
+        }
+    }
+
+    public void siteModel(Model model, Optional<Site> site){
+        model.addAttribute("site", site);
+        model.addAttribute("formatedDate", formatDate(site.get().getDate()));
+        model.addAttribute("sectors", sectorRepository.findAll());
+        model.addAttribute("newSector", new Sector());
+        model.addAttribute("routes", routeRepository.findAll());
+        model.addAttribute("newRoute", new Route());
+        model.addAttribute("ratings", ratingRepository.findAll());
+    }
+
+    @PostMapping(path = "site/{id}")
+    public String postSiteById(@PathVariable Long id, Model model, @ModelAttribute Route route){
+        Optional<Site> site = siteRepository.findById(id);
+        routeRepository.save(route);
+        if (site.isPresent()) {
+            siteModel(model, site);
             return "site";
         } else {
             return null;
@@ -67,7 +106,7 @@ public class SiteController {
         return "sitesList";
     }*/
 
-    private String getDate(){
+    private String getTodaysDate(){
         return DateTimeFormatter.ofPattern("ddMMyyyy").format(LocalDate.now());
     }
     private String formatDate(String dateBrut){

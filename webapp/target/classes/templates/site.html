@@ -5,7 +5,10 @@
         <title th:text="${site.get().getName()}">Site</title>
         <link rel="stylesheet" href="/CSS/page.css"/>
         <link rel="stylesheet" href="/CSS/bootstrap.css"/>
+        <!-- Bootstrap -->
+        <!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">-->
         <link rel="stylesheet" href="/CSS/site.css"/>
+        <link rel="stylesheet" href="/CSS/CSSform.css"/>
     </head>
 
     <body>
@@ -45,15 +48,132 @@
                 </div>
             </div>-->
 
+            <br>
+            <div class="row">
+                <div class="col-12">
+                    <h2>Liste des différentes voies :</h2>
+                </div>
+            </div>
+            <div class="row" th:if="${routes != null}" th:each="route : ${routes}">
+                Il y a bien une voie !
+            </div>
+            <div class="row" th:unless="${routes != null}">
+                Aucunes voies.
+            </div>
+
+            <br>
             <div class="row">
                 <div class="col-3">
+                    <a class="btn btn-outline-info" id="displayForm">Ajouter une voie</a>
+                </div>
+                <div class="col-3">
                     <a class="btn btn-outline-info" href="/sitesList">Retour</a>
+                </div>
+            </div>
+            <br>
+            <br>
+
+
+            <div id="siteForm" class="row" style="display: none;">
+                <div class="col-md-6">
+                    <form th:object="${newRoute}" th:method="post" th:action="@{'/site/' + ${site.get().getId()}}">
+                        <div class="form-row">
+                            <div class="col-8">
+                                <label for="nom">Nom de la voie : </label>
+                                <input type="text" id="nom" class="form-control routeInput" th:field="*{name}">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-row">
+                            <div class="form-check col-12">
+                                <label class="form-check-label" for="defaultCheck1">
+                                    Associer Secteur :
+                                </label>
+                                <input class="form-check-input col-4" type="checkbox" value="" id="defaultCheck1">
+                            </div>
+                        </div>
+                        <div class="form-row" id="sectorDiv" style="display: none;">
+                            <div class="col-6">
+                                <select type="text" id="secteur" class="custom-select routeInput" th:field="*{sector}">
+                                    <option th:each="sectorI : ${sectors}" th:value="${sectorI.id}"
+                                            th:text="${sectorI.getName()}">Pas
+                                        de secteur
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-3 offset-2">
+                                <a class="btn btn-outline-info" id="displaySectorForm">Créer un secteur</a>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-3">
+                                <label for="cotation">Cotation : </label>
+                                <select type="text" id="cotation" class="custom-select routeInput" th:field="*{rating}">
+                                    <option th:each="ratingI : ${ratings}" th:value="${ratingI.id}"
+                                            th:text="${ratingI.getWorded()}">Pas
+                                        de cotation
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-3">
+                                <label for="nbSplits">Nombre de splits : </label>
+                                <input type="number" id="nbSplits" class="form-control routeInput" th:min="1"
+                                       th:field="*{nbSpits}">
+                            </div>
+                            <div class="col-3 offset-1">
+                                <label for="nbLongueurs">Nombre de longueurs : </label>
+                                <input type="number" id="nbLongueurs" class="form-control routeInput" th:min="1"
+                                       th:field="*{nbPitches}">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div id="submit" class="col-2">
+                                <button type="submit" class="btn btn-primary routeInput">Créer</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+
+                <div class="col-md-6" id="sectorForm" style="display: none;">
+                    <form th:object="${newSector}" th:method="post" th:action="@{'/site/' + ${site.get().getId()}}">
+                        <div class="form-row">
+                            <div class="col-8">
+                                <label for="nomSecteur">Nom du secteur : </label>
+                                <input type="text" id="nomSecteur" class="form-control" th:field="*{name}">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-12">
+                                <label for="descriptionSecteur">Description : </label>
+                                <textarea id="descriptionSecteur" class="form-control" th:field="*{description}"
+                                          rows="3"></textarea>
+                                <small id="passwordHelpBlock" class="form-text text-muted">
+                                    N'hésitez pas à mettre le plus d'informations possible !
+                                </small>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-row">
+                            <div id="submitSector" class="col-2">
+                                <button type="submit" class="btn btn-primary">Créer un Secteur</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
 
         </div>
 
         <footer th:insert="footer"></footer>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <script src="/JavaScript/site.js"></script>
 
     </body>
 </html>
