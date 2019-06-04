@@ -76,4 +76,13 @@ public class Route {
     public void setNbPitches(int nbPitches) {
         this.nbPitches = nbPitches;
     }
+
+    public void printRoute(){
+        System.out.println();
+        System.out.println("Voie : " + this.name + " id : " + this.id);
+        System.out.println("Associé au secteur : " + this.sector.getName() );
+        System.out.println("Notation : " + this.rating);
+        System.out.println("Nombre de spits : " + this.nbSpits + " et Nombre de longueurs : " + this.nbPitches);
+        System.out.println();
+    }
 }

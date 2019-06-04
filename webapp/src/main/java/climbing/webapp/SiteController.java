@@ -56,8 +56,9 @@ public class SiteController {
      * With it, we can use the CRUD method findById()
      * @param model
      * In the model we put the site
-     * But also a new Route (in it, we'll put the information)
-     * Then we'll have to display the routes if they exist
+     * But also a new Route
+     * Or a new Sector
+     * Then we'll have to display the routes/sectors if they exist
      * @return the site page
      */
     @GetMapping(path = "site/{id}")
@@ -85,6 +86,19 @@ public class SiteController {
     public String postSiteById(@PathVariable Long id, Model model, @ModelAttribute Route route){
         Optional<Site> site = siteRepository.findById(id);
         routeRepository.save(route);
+        if (site.isPresent()) {
+            siteModel(model, site);
+            return "site";
+        } else {
+            return null;
+        }
+    }
+
+    @PostMapping(path = "site/{id}_2")
+    public String postSectorSiteById(@PathVariable Long id, Model model, @ModelAttribute Sector sector){
+        Optional<Site> site = siteRepository.findById(id);
+        sector.setId(id);
+        sectorRepository.save(sector);
         if (site.isPresent()) {
             siteModel(model, site);
             return "site";

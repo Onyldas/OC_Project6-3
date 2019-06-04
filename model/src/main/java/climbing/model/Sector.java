@@ -63,4 +63,13 @@ public class Sector {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public void printSector(){
+        System.out.println();
+        System.out.println("Secteur : " + this.name + " id : " + this.id);
+        System.out.println("Associé au site : " + this.site.getName() + "(" + this.site.getId() + ")");
+        System.out.println("Description : " + this.description);
+        System.out.println("C'est un secteur par défault ? " + this.defaultSector);
+        System.out.println();
+    }
 }
