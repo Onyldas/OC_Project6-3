@@ -16,6 +16,7 @@
       <module name="business" target="1.8" />
       <module name="climbing" target="1.8" />
       <module name="consumer" target="1.8" />
+      <module name="log4jModule" target="1.8" />
       <module name="model" target="1.8" />
       <module name="webapp" target="1.8" />
     </bytecodeTargetLevel>
@@ -24,6 +25,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="business" options="-parameters" />
       <module name="consumer" options="-parameters" />
+      <module name="log4jModule" options="-parameters" />
       <module name="model" options="-parameters" />
       <module name="webapp" options="-parameters" />
     </option>

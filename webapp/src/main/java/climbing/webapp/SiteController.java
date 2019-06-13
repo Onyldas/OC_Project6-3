@@ -4,6 +4,8 @@ import climbing.consumer.*;
 import climbing.model.Route;
 import climbing.model.Sector;
 import climbing.model.Site;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +17,8 @@ import java.util.Optional;
 
 @Controller
 public class SiteController {
+
+    private static final Logger logger = LogManager.getLogger();
 
     @Autowired
     private SiteRepository siteRepository;
@@ -39,6 +43,9 @@ public class SiteController {
         site.setDate(getTodaysDate());
         siteRepository.save(site);
         model.addAttribute("sites", siteRepository.findAll());
+        System.out.println("Log4j created");
+        System.out.println("coucou");
+        logger.debug("Debugging log4j2 log");
         return "sitesList";
     }
 

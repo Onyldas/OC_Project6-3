@@ -1,0 +1,10 @@
+climbing\consumer\UserRepository.class
+climbing\consumer\CommentRepository.class
+climbing\consumer\TopoRepository.class
+climbing\consumer\RouteRepository.class
+climbing\consumer\SiteRepository.class
+climbing\consumer\RatingRepository.class
+climbing\consumer\SiteCommentRepository.class
+climbing\consumer\TopoCommentRepository.class
+climbing\consumer\SectorRepository.class
+climbing\consumer\ReservationRepository.class

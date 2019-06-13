@@ -1,1 +1,3 @@
-climbing\model\Users.class
+climbing\model\TopoComment.class
+climbing\model\Reservation.class
+climbing\model\TopoCommentId.class
